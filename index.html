@@ -15,8 +15,9 @@
     <h1>Welcome to the NatureNest App!</h1>
     
     <!-- Buttons to switch between projects -->
-    <button onclick="loadProject('https:/x.thunkable.com/projects/67e8de5fc4a0806935dc88fd/preview/15088109-150c-4b56-b092-fcd8c0419c45')">Project 1</button>
-    <button onclick="openInNewTab()">Open in New Tab</button>
+      <button onclick="window.open('https://x.thunkable.com/projects/YOUR_PROJECT_ID/preview', '_blank')">
+        Open Thunkable Project
+    </button>
 
     <!-- The iframe to display the Thunkable projects -->
     <iframe id="projectFrame"></iframe>
