@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Thunkable PWA</title>
+    <style>
+
+        body { text-align: center; font-family: Poppins, sans-serif;  background-color: #F8F8FF}
+        iframe { width: 90vw; height: 80vh; border: none; display: none; }
+        button { padding: 10px; margin: 10px; font-size: 16px; cursor: pointer; background-color: #BFD4A3; font-family: Poppins}
+    </style>
+</head>
+<body>
+    <h1>Welcome to the NatureNest App!</h1>
+    
+    <!-- Buttons to switch between projects -->
+    <button onclick="loadProject('https:/x.thunkable.com/projects/67e8de5fc4a0806935dc88fd/preview/15088109-150c-4b56-b092-fcd8c0419c45')">Project 1</button>
+    <button onclick="openInNewTab()">Open in New Tab</button>
+
+    <!-- The iframe to display the Thunkable projects -->
+    <iframe id="projectFrame"></iframe>
+
+    <script>
+    
+        function openProject(url) {
+            window.open(url, "_blank"); // Opens in a new tab
+        }
+    
+        let currentProjectUrl = '';
+
+        function loadProject(url) {
+            document.getElementById("projectFrame").style.display = "block"; 
+            document.getElementById("projectFrame").src = url;
+            currentProjectUrl = url;
+        }
+
+        function openInNewTab() {
+            if (currentProjectUrl) {
+                window.open(currentProjectUrl, "_blank");
+            } else {
+                alert("Please select a project first!");
+            }
+        }
+    </script>
+</body>
+</html>
